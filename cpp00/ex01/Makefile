@@ -1,23 +1,23 @@
-NAME =	megaphone
+NAME =	phonebook
 
 CC = c++
 # CFLAGS = -g
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 RM = rm -rf
 # HEAD = push_swap.h
-SRCS = 	megaphone.cpp
+SRCS = 	main.cpp
 
 
 OBJS = $(SRCS:.c=.o)
 
 TOTAL_FILES = $(words $(SRCS))
-
+ 
 all:			$(NAME)
 				@clear
 				@echo "Compilation terminée";
 
 $(NAME):		$(OBJS)
-				@$(CC) -o $(NAME) $(CFLAGS)
+				@$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
 
 clean:			
 				@$(RM) $(OBJS)
