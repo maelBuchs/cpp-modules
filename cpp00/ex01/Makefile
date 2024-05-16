@@ -5,7 +5,10 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 RM = rm -rf
 # HEAD = push_swap.h
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Contact.cpp	\
+		PhoneBook.cpp
+
 
 
 OBJS = $(SRCS:.c=.o)
@@ -19,13 +22,13 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				@$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
 
-clean:			
-				@$(RM) $(OBJS)
-				@clear
-				@echo "Clean OK";
+# clean:			
+# 				@$(RM) $(NAME)
+# 				@clear
+# 				@echo "Clean OK";
 
 
-fclean: 		clean
+fclean: 		#clean
 				@clear
 				@echo "Full Clean OK ";
 

@@ -1,22 +1,22 @@
-// #include "phonebook.hpp"
 #include <iostream>
+#include "PhoneBook.hpp"
 
-int main(void)
+int main()
 {
-    // Phonebook phonebook;
     std::string command;
-
-    while (1)
+    PhoneBook MyPhoneBook;
+    Contact contact;
+    while (42)
     {
         std::cout << "Enter a command: ";
         std::cin >> command;
-        if (command == "ADD")
-            std::cout << "bah la faut ADD" << std::endl;
-        else if (command == "SEARCH")
-            std::cout << "bah la faut SEARCH" << std::endl;
+        if (std::cin.eof())
+            break;
+        if (command == "SEARCH")
+            MyPhoneBook.DisplayContacts();
+        else if (command == "ADD")
+            MyPhoneBook.AddContact();
         else if (command == "EXIT")
-            std::cout << "bah la faut EXIT" << std::endl;
-
-    }
-    return (0);
+            break;
+    }  
 }

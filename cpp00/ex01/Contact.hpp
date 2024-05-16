@@ -1,36 +1,33 @@
-#ifndef CONATCT_HPP
+#ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <iostream>
+
+typedef std::string str;
 class Contact
 {
 	public:
 
-		void SetFirstName(std::string FirstName);
-		void SetLastName(std::string LastName);
-		void SetNickName(std::string NickName);
-		void SetPhoneNumber(std::string PhoneNumber);
-		void SetDarkestSecret(std::string DarkestSecret);
-		std::string GetFirstName();
-		std::string GetLastName();
-		std::string GetNickName();
-		std::string GetPhoneNumber();
-		std::string GetDarkestSecret();
-		Contact(std::string, std::string, std::string, std::string, std::string);
+		void SetFirstName(str FirstName);
+		void SetLastName(str LastName);
+		void SetNickName(str NickName);
+		void SetPhoneNumber(str PhoneNumber);
+		void SetDarkestSecret(str DarkestSecret);
+		str GetFirstName();
+		str GetLastName();
+		str GetNickName();
+		str GetPhoneNumber();
+		str GetDarkestSecret();
+		Contact();
+
 	private:
-		std::string FirstName;
-		std::string LastName;
-		std::string NickName;
-		std::string PhoneNumber;
-		std::string DarkestSecret;
+
+		str _FirstName;
+		str _LastName;
+		str _NickName;
+		str _PhoneNumber;
+		str _DarkestSecret;
 };
 
-Contact::Contact(std::string FirstName, std::string LastName, std::string NickName, std::string PhoneNumber, std::string DarkestSecret)
-{
-	this->FirstName = FirstName;
-	this->LastName = LastName;
-	this->NickName = NickName;
-	this->PhoneNumber = PhoneNumber;
-	this->DarkestSecret = DarkestSecret;
-}
+
 
 #endif
