@@ -1,18 +1,14 @@
 #include "Weapon.hpp"
 
-Weapon::Weapon(){setType("arme qui tue");}
+Weapon::Weapon() { setType("arme qui tue"); }
 
-Weapon::Weapon(str Type):_Type(Type){}
+Weapon::Weapon(str Type) : _Type(Type) {}
 
-Weapon::~Weapon(){}
+Weapon::~Weapon() {}
 
-str &Weapon::getType()
-{
-	str &ref = _Type;
-	return(ref);
+str &Weapon::getType() {
+  str &ref = _Type;
+  return (ref);
 }
 
-void Weapon::setType(str Type)
-{
-	_Type = Type;
-}
+void Weapon::setType(str Type) { _Type = Type; }
