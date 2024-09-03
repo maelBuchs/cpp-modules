@@ -1,0 +1,22 @@
+je m'appelle mael je suis mael
+
+
+mael -> bernard
+
+int nbr = 0;
+
+while len str
+{
+	newstr[i - (seach.length * nbr) + found.length * nbr] = str[i]
+	if (str[i] == search[0])
+	{
+		while (len search)
+			if str i + j == search 
+				j++
+			else break
+			erase search
+			insert found
+			nbr++;
+	}
+	i++;
+}
