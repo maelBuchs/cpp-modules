@@ -1,9 +1,10 @@
-NAME = zombies	
+NAME = replacer	
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 RM = rm -rf
-SRCS = 	main.cpp
+SRCS = 	main.cpp\
+		File.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all:			$(NAME)
