@@ -10,7 +10,7 @@ str File::getFilename()
   return (_fileName);
 }
 
-int checkIsSearched(str search, str string, int i)
+static int checkIsSearched(str search, str string, int i)
 {
   int j = 0;
   while (i + j <= string.length() && j < search.length() )
@@ -26,7 +26,19 @@ int checkIsSearched(str search, str string, int i)
 int File::replace(str search, str found)
 {
   std::ifstream infile(_fileName);
+    if(!infile.is_open())
+    {
+      std::cout << "Error could not open file : " << _fileName << std::endl;
+      return 1;
+    }
+
   std::ofstream outfile(_fileName + ".replace");
+     if(!infile.is_open())
+     {
+        std::cout << "Error could not create file : " << _fileName + ".replace" << std::endl;
+        infile.close();
+        return 1;
+     }
   str line;
   while (std::getline(infile, line))
   {
