@@ -95,7 +95,7 @@ Fixed Fixed::operator++(int) {
 }
 Fixed &Fixed::operator--() {
     --_value;
-    return *this;
+    return *this;`
 }
 Fixed &Fixed::operator--(int) {
     --_value;
