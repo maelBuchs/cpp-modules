@@ -88,16 +88,40 @@ Fixed &Fixed::operator++() {
     ++_value;
     return *this;
 }
+
 Fixed Fixed::operator++(int) {
     Fixed temp = *this;
     _value++;
     return temp;
 }
+
 Fixed &Fixed::operator--() {
     --_value;
-    return *this;`
+    return *this;
 }
+
 Fixed &Fixed::operator--(int) {
     --_value;
     return *this;
+}
+
+Fixed Fixed::max(Fixed &f1, Fixed &f2){
+    if(f1>f2)
+        return f1;
+    return f2;
+}
+Fixed Fixed::max(Fixed const &f1, Fixed const &f2){
+    if (f1.toFloat()>f2.toFloat())
+        return f1;
+    return f2;
+}
+Fixed Fixed::min(Fixed &f1, Fixed &f2){
+    if (f1<f2)
+        return f1;
+    return f2;
+}
+Fixed Fixed::min(Fixed const &f1, Fixed const &f2){
+    if(f1.toFloat()<f2.toFloat())
+        return f1;
+    return f2;
 }
