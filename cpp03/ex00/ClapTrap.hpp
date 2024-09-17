@@ -16,9 +16,9 @@ class ClapTrap {
 
   private:
     std::string  _name;
-    unsigned int _hitPoints = 10;
-    unsigned int _energyPoint = 10;
-    unsigned int _attackDamage = 0;
+    unsigned int _hitPoints;
+    unsigned int _energyPoint;
+    unsigned int _attackDamage;
 };
 
 #endif

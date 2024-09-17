@@ -47,6 +47,9 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 
 ClapTrap::ClapTrap() {
     _name = "Bernard";
+    _hitPoints = 10;
+    _energyPoint = 10;
+    _attackDamage = 0;
     std::cout << "ClapTrap default constructor" << std::endl;
 }
 
