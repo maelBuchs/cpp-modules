@@ -1,4 +1,4 @@
-NAME =	animals
+NAME =	animals_with_brainz
 SRCS =  main.cpp \
                 Dog.cpp \
                 Cat.cpp \

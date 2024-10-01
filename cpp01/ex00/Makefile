@@ -11,18 +11,21 @@ SRCS = 	main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-all:			$(NAME)
-				@echo "Compilation terminée";
 
-$(NAME):		$(OBJS)
-				$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+all: $(NAME)
 
-clean: 
-				$(RM) $(OBJS)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-fclean: clean 
-				$(RM) $(NAME)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-re: 		fclean all
+clean:
+	rm -f $(OBJS)
 
-.PHONY:			all clean fclean re
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

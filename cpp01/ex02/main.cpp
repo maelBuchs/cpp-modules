@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main (int argc, char *argv[]) {
+int main () {
 
   std::string string = "HI THIS IS BRAIN";
   std::string &stringREF = string;

@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-int main (int argc, char *argv[]) {
+int main () {
  
   Zombie *horde = zombieHorde(5, "Bernard");
 
