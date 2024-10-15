@@ -1,6 +1,6 @@
 #include "Weapon.hpp"
 
-Weapon::Weapon() { setType("arme qui tue"); }
+Weapon::Weapon() { setType("deadly weapon"); }
 
 Weapon::Weapon(str Type) : _Type(Type) {}
 
