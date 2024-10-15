@@ -8,12 +8,13 @@
 class PhoneBook : public Contact
 {
 	public:
-        void AddContact();
+        int AddContact();
         void SearchContact();
-        void DisplayContacts();
+        int DisplayContacts();
         str ShortenString(str str);
         PhoneBook();
 	private:
+        unsigned int _nbrContacts;
         Contact _Contacts[8];
 };
 

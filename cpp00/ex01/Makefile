@@ -1,37 +1,26 @@
 NAME =	phonebook
+SRCS = 	main.cpp\
+		PhoneBook.cpp\
+		Contact.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-# CFLAGS = -g
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
-RM = rm -rf
-# HEAD = push_swap.h
-SRCS = 	main.cpp \
-		Contact.cpp	\
-		PhoneBook.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
+all: $(NAME)
 
+$(NAME): $(OBJS)
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
-OBJS = $(SRCS:.c=.o)
+%.o: %.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
-TOTAL_FILES = $(words $(SRCS))
- 
-all:			$(NAME)
-				@clear
-				@echo "Compilation terminée";
+clean:
+	rm -f $(OBJS)
 
-$(NAME):		$(OBJS)
-				@$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+fclean: clean
+	rm -f $(NAME)
 
-# clean:			
-# 				@$(RM) $(NAME)
-# 				@clear
-# 				@echo "Clean OK";
+re: fclean all
 
-
-fclean: 		#clean
-				@clear
-				@echo "Full Clean OK ";
-
-re: 			fclean all
-
-.PHONY:			all clean fclean re
+.PHONY: all clean fclean re

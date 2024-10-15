@@ -9,14 +9,13 @@ int main()
     while (42)
     {
         std::cout << "Enter a command: ";
-        std::cin >> command;
-        if (std::cin.eof())
-            break;
-        if (command == "SEARCH")
-            MyPhoneBook.DisplayContacts();
-        else if (command == "ADD")
-            MyPhoneBook.AddContact();
-        else if (command == "EXIT")
-            break;
+        if (!std::getline(std::cin, command))
+            return 1;
+        if ((command == "SEARCH" && MyPhoneBook.DisplayContacts())
+            || (command == "ADD" && MyPhoneBook.AddContact())
+            || command == "EXIT")
+            return 0;
+        else 
+            std::cout << "COMMANDS : SEARCH | ADD | EXIT" << std::endl;
     }  
 }
