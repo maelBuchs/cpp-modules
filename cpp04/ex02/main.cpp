@@ -3,7 +3,6 @@
 #include "WrongCat.hpp"
 
 int main(void) {
-	const Animal *meta = new Animal();
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 	const WrongAnimal *wrong = new WrongCat();
@@ -11,11 +10,10 @@ int main(void) {
 	std::cout << std::endl;
 	i->makeSound();
 	j->makeSound();
-	meta->makeSound();
 	wrong->makeSound();
 
 	std::cout << std::endl;
-	delete meta;
+	// delete meta; // Retiré
 	delete j;
 	delete i;
 	delete wrong;
