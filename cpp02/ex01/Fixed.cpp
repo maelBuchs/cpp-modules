@@ -6,13 +6,15 @@ Fixed::Fixed(const Fixed &fixed) {
     std::cout << "Copy constructor called" << std::endl;
     (*this) = fixed;
 }
-Fixed::Fixed(const float num) { 
+Fixed::Fixed(const float num) {
     std::cout << "Float constructor called" << std::endl;
-    _value = int(roundf(num * (1 << _fractionalBit))); }
+    _value = int(roundf(num * (1 << _fractionalBit)));
+}
 
 Fixed::Fixed(const int num) {
     std::cout << "Int constructor called" << std::endl;
-     _value = num << _fractionalBit; }
+    _value = num << _fractionalBit;
+}
 
 Fixed &Fixed::operator=(Fixed const &f) {
     std::cout << "Copy assignment operator called" << std::endl;
