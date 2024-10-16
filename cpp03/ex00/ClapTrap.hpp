@@ -5,9 +5,9 @@
 
 class ClapTrap {
   public:
-    void attack(const std::string &target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+    void      attack(const std::string &target);
+    void      takeDamage(unsigned int amount);
+    void      beRepaired(unsigned int amount);
     ClapTrap &operator=(const ClapTrap &other);
     ClapTrap();
     ClapTrap(std::string name);

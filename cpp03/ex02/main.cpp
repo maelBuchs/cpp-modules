@@ -1,5 +1,5 @@
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
     ClapTrap clapTrap("ClapTrap");
@@ -21,7 +21,6 @@ int main(void) {
     fragTrap.takeDamage(5);
     fragTrap.beRepaired(5);
     fragTrap.highFivesGuys();
-    
 
     return (0);
 }

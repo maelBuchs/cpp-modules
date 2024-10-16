@@ -2,7 +2,7 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
- ClapTrap clapTrap("ClapTrap");
+    ClapTrap clapTrap("ClapTrap");
 
     clapTrap.attack("target");
     clapTrap.takeDamage(5);

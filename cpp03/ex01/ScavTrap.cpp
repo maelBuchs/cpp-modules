@@ -5,13 +5,17 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
     std::cout << "ScavTrap constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap() : ClapTrap("ScavTrap", 100, 50, 20) { std::cout << "ScavTrap default constructor" << std::endl; }
+ScavTrap::ScavTrap() : ClapTrap("ScavTrap", 100, 50, 20) {
+    std::cout << "ScavTrap default constructor" << std::endl;
+}
 
-ScavTrap::ScavTrap(const ScavTrap &c) : ClapTrap(c) { std::cout << "ScavTrap copy constructor" << std::endl; }
+ScavTrap::ScavTrap(const ScavTrap &c) : ClapTrap(c) {
+    std::cout << "ScavTrap copy constructor" << std::endl;
+}
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
-	ClapTrap::operator=(other);
-	return (*this);
+    ClapTrap::operator=(other);
+    return (*this);
 }
 
 ScavTrap::~ScavTrap() { std::cout << "ScavTrap destructor called" << std::endl; }
