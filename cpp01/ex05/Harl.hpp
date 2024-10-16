@@ -5,12 +5,12 @@
 
 typedef std::string str;
 
-class Harl
-{
+class Harl {
   public:
     void complain(str level);
     Harl(void);
     ~Harl(void);
+
   private:
     void debug(void);
     void info(void);

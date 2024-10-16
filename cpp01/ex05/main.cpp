@@ -1,11 +1,11 @@
 #include "Harl.hpp"
 
 int main(void) {
-  Harl Benoit;
+    Harl Benoit;
 
-  Benoit.complain("debug");
-  Benoit.complain("info");
-  Benoit.complain("warning");
-  Benoit.complain("error");
-  Benoit.complain("toto");
+    Benoit.complain("debug");
+    Benoit.complain("info");
+    Benoit.complain("warning");
+    Benoit.complain("error");
+    Benoit.complain("toto");
 }

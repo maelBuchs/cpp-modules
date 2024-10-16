@@ -15,6 +15,5 @@ Weapon *HumanB::getWeapon() { return (_Weapon); }
 void HumanB::setWeapon(Weapon &Weapon) { _Weapon = &Weapon; }
 
 void HumanB::attack() {
-  std::cout << getName() << " attacks with their " << (*_Weapon).getType()
-            << std::endl;
+    std::cout << getName() << " attacks with their " << (*_Weapon).getType() << std::endl;
 }

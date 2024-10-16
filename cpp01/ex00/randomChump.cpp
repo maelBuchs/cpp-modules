@@ -1,7 +1,3 @@
 #include "Zombie.hpp"
 
-void randomChump(str name)
-{
-  Zombie(name).announce();
-  
-}
+void randomChump(str name) { Zombie(name).announce(); }

@@ -4,8 +4,7 @@
 #include <iostream>
 
 typedef std::string str;
-class Zombie
-{
+class Zombie {
   public:
     void announce(void);
     str  getName();
@@ -13,6 +12,7 @@ class Zombie
     Zombie();
     Zombie(str Name);
     ~Zombie();
+
   private:
     str _Name;
 };

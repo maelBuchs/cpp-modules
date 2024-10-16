@@ -9,6 +9,5 @@ void HumanA::setName(str Name) { _Name = Name; }
 str HumanA::getName(void) { return (_Name); }
 
 void HumanA::attack() {
-  std::cout << getName() << " attacks with their " << _Weapon.getType()
-            << std::endl;
+    std::cout << getName() << " attacks with their " << _Weapon.getType() << std::endl;
 }

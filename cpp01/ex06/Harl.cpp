@@ -14,25 +14,25 @@ void Harl::complain(str level) {
     int i;
 
     for (i = 0; i < 4; i++) {
-      if (levels[i] == level)
-        break;
+        if (levels[i] == level)
+            break;
     }
 
-  switch (i) {
+    switch (i) {
     case 0:
-      debug();
+        debug();
     case 1:
-      info();
+        info();
     case 2:
-      warning();
+        warning();
     case 3:
-      error();
-      break;
+        error();
+        break;
     default:
-      std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-  }
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
 }
 
-Harl::Harl(){}
+Harl::Harl() {}
 
-Harl::~Harl(){}
+Harl::~Harl() {}

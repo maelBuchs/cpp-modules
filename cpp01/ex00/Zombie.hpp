@@ -4,18 +4,18 @@
 #include <iostream>
 
 typedef std::string str;
-class Zombie
-{
+class Zombie {
   public:
     void announce(void);
     str  getName();
     void setName(str Name);
     Zombie(str Name);
     ~Zombie();
+
   private:
     str _Name;
 };
 
-void randomChump(str name);
+void    randomChump(str name);
 Zombie *newZombie(str name);
 #endif

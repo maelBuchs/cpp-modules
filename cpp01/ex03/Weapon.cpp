@@ -7,8 +7,8 @@ Weapon::Weapon(str Type) : _Type(Type) {}
 Weapon::~Weapon() {}
 
 str &Weapon::getType() {
-  str &ref = _Type;
-  return (ref);
+    str &ref = _Type;
+    return (ref);
 }
 
 void Weapon::setType(str Type) { _Type = Type; }
