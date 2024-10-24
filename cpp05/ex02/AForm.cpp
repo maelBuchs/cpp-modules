@@ -6,8 +6,8 @@ const char *AForm::GradeTooHighException::what() const throw() { return "Grade i
 const char *AForm::GradeTooLowException::what() const throw() { return "Grade is too low"; }
 
 AForm::AForm(std::string name, int const sGrade, int const xGrade)
-    : _name(name),
-      _isSigned(false),
+    : _isSigned(false),
+      _name(name),
       _sGrade(sGrade),
       _xGrade(xGrade) {
     if (sGrade > 150 || xGrade > 150)
@@ -17,8 +17,8 @@ AForm::AForm(std::string name, int const sGrade, int const xGrade)
 }
 
 AForm::AForm(const AForm &Aform)
-    : _name(Aform._name),
-      _isSigned(Aform._isSigned),
+    : _isSigned(Aform._isSigned),
+      _name(Aform._name),
       _sGrade(Aform._sGrade),
       _xGrade(Aform._xGrade) {}
 

@@ -21,6 +21,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &a) : A
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     if (executor.getGrade() > getXGrade())
         throw GradeTooLowException();
+    if (!_isSigned)
+        return ;
     std::ofstream file((_target + "_shrubbery").c_str());
     if (!file.is_open()) {
         throw std::ios_base::failure("Error: Unable to open the file.");
@@ -38,3 +40,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
          << std::endl;
     file.close();
 }
+//TODO - FIX executable when not signed

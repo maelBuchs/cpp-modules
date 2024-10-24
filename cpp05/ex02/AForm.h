@@ -29,10 +29,10 @@ class AForm {
     AForm();
     AForm(std::string name,  int const sGrade,  int const xGrade);
     AForm(const AForm &Aform);
+    bool              _isSigned;
   
   private:
     std::string const _name;
-    bool              _isSigned;
     const int         _sGrade;
     const int         _xGrade;
     

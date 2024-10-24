@@ -1,7 +1,6 @@
 #ifndef FORM_H
 #define FORM_H
 
-// #include "Bureaucrat.h"
 #include <iostream>
 
 class Bureaucrat;
@@ -17,8 +16,6 @@ class Form {
     int getSGrade() const;
     int getXGrade() const;
     void beSigned(Bureaucrat bureaucrat);
-    void beExecuted(Bureaucrat const &executor) const;
-    virtual void execute(Bureaucrat const &executor) const;
 
   private:
     std::string const _name;
