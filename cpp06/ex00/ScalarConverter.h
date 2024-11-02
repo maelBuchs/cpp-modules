@@ -21,4 +21,6 @@ class ScalarConverter {
     static void convert(std::string input);
 };
 
+void autresFonctions();
+
 #endif
