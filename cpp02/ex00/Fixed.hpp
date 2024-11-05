@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-typedef std::string str;
-
 class Fixed {
   public:
     Fixed(void);
