@@ -1,6 +1,5 @@
 #include "File.hpp"
 
-
 void File::setFilename(std::string fileName) { _fileName = fileName; }
 
 std::string File::getFilename() { return (_fileName); }
@@ -24,7 +23,7 @@ int File::replace(std::string search, std::string found) {
     }
 
     std::ofstream outfile((_fileName + ".replace").c_str());
-    if (!infile.is_open()) {
+    if (!outfile.is_open()) {
         std::cout << "Error could not create file : " << _fileName + ".replace" << std::endl;
         infile.close();
         return 1;

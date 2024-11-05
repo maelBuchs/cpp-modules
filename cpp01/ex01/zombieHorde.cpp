@@ -2,7 +2,7 @@
 
 Zombie *zombieHorde(int N, std::string name) {
 
-    if (N < 0) {
+    if (N <= 0) {
         std::cout << "Error : N must be positive" << std::endl;
         return (NULL);
     }
