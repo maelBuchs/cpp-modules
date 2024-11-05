@@ -1,11 +1,11 @@
 #include "File.hpp"
 
 
-void File::setFilename(str fileName) { _fileName = fileName; }
+void File::setFilename(std::string fileName) { _fileName = fileName; }
 
-str File::getFilename() { return (_fileName); }
+std::string File::getFilename() { return (_fileName); }
 
-static int checkIsSearched(str search, str string, int i) {
+static int checkIsSearched(std::string search, std::string string, int i) {
     int j = 0;
     while (i + j <= int(string.length()) && j < int(search.length())) {
         if (string[i + j] == search[j])
@@ -16,7 +16,7 @@ static int checkIsSearched(str search, str string, int i) {
     return 1;
 }
 
-int File::replace(str search, str found) {
+int File::replace(std::string search, std::string found) {
     std::ifstream infile(_fileName.c_str());
     if (!infile.is_open()) {
         std::cout << "Error could not open file : " << _fileName << std::endl;
@@ -29,9 +29,9 @@ int File::replace(str search, str found) {
         infile.close();
         return 1;
     }
-    str line;
+    std::string line;
     while (std::getline(infile, line)) {
-        str newLine;
+        std::string newLine;
         for (int i = 0; i <= int(line.length()); i++) {
             if (line[i] == search[0] && line.length() > search.length() + i - 1) {
                 if (checkIsSearched(search, line, i)) {
@@ -49,6 +49,6 @@ int File::replace(str search, str found) {
     return 0;
 }
 
-File::File(str fileName) { setFilename(fileName); }
+File::File(std::string fileName) { setFilename(fileName); }
 
 File::~File() { return; }

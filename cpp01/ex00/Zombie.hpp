@@ -3,19 +3,18 @@
 
 #include <iostream>
 
-typedef std::string str;
 class Zombie {
   public:
     void announce(void);
-    str  getName();
-    void setName(str Name);
-    Zombie(str Name);
+    std::string  getName();
+    void setName(std::string Name);
+    Zombie(std::string Name);
     ~Zombie();
 
   private:
-    str _Name;
+    std::string _Name;
 };
 
-void    randomChump(str name);
-Zombie *newZombie(str name);
+void    randomChump(std::string name);
+Zombie *newZombie(std::string name);
 #endif

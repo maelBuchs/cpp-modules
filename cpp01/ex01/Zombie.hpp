@@ -3,19 +3,18 @@
 
 #include <iostream>
 
-typedef std::string str;
 class Zombie {
   public:
     void announce(void);
-    str  getName();
-    void setName(str Name);
+    std::string  getName();
+    void setName(std::string Name);
     Zombie();
-    Zombie(str Name);
+    Zombie(std::string Name);
     ~Zombie();
 
   private:
-    str _Name;
+    std::string _Name;
 };
 
-Zombie *zombieHorde(int N, str name);
+Zombie *zombieHorde(int N, std::string name);
 #endif

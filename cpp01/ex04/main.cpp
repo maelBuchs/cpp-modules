@@ -1,6 +1,5 @@
 #include "File.hpp"
 
-typedef std::string str;
 
 int main(int argc, char **argv) {
 

@@ -1,3 +1,3 @@
 #include "Zombie.hpp"
 
-void randomChump(str name) { Zombie(name).announce(); }
+void randomChump(std::string name) { Zombie(name).announce(); }

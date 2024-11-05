@@ -3,11 +3,9 @@
 
 #include <iostream>
 
-typedef std::string str;
-
 class Harl {
   public:
-    void complain(str level);
+    void complain(std::string level);
     Harl(void);
     ~Harl(void);
 

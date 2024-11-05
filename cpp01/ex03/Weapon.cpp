@@ -2,13 +2,13 @@
 
 Weapon::Weapon() { setType("deadly weapon"); }
 
-Weapon::Weapon(str Type) : _Type(Type) {}
+Weapon::Weapon(std::string Type) : _Type(Type) {}
 
 Weapon::~Weapon() {}
 
-str &Weapon::getType() {
-    str &ref = _Type;
+std::string &Weapon::getType() {
+    std::string &ref = _Type;
     return (ref);
 }
 
-void Weapon::setType(str Type) { _Type = Type; }
+void Weapon::setType(std::string Type) { _Type = Type; }

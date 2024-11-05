@@ -4,18 +4,17 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-typedef std::string str;
 
 class File {
   public:
-    void setFilename(str fileName);
-    str  getFilename();
-    int  replace(str search, str found);
-    File(str fileName);
+    void setFilename(std::string fileName);
+    std::string  getFilename();
+    int  replace(std::string search, std::string found);
+    File(std::string fileName);
     ~File();
 
   private:
-    str _fileName;
+    std::string _fileName;
 };
 
 #endif

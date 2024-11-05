@@ -1,14 +1,14 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(Weapon *Weapon, str Name) : _Name(Name), _Weapon(Weapon) {}
+HumanB::HumanB(Weapon *Weapon, std::string Name) : _Name(Name), _Weapon(Weapon) {}
 
-HumanB::HumanB(str Name) : _Name(Name) {}
+HumanB::HumanB(std::string Name) : _Name(Name) {}
 
 HumanB::~HumanB() {}
 
-void HumanB::setName(str Name) { _Name = Name; }
+void HumanB::setName(std::string Name) { _Name = Name; }
 
-str HumanB::getName(void) { return (_Name); }
+std::string HumanB::getName(void) { return (_Name); }
 
 Weapon *HumanB::getWeapon() { return (_Weapon); }
 

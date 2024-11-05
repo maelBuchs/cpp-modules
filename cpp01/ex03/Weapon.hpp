@@ -3,18 +3,17 @@
 
 #include <iostream>
 
-typedef std::string str;
 
 class Weapon {
   public:
-    str &getType();
-    void setType(str Type);
+    std::string &getType();
+    void setType(std::string Type);
     Weapon();
-    Weapon(str Type);
+    Weapon(std::string Type);
     ~Weapon();
 
   private:
-    str _Type;
+    std::string _Type;
 };
 
 #endif

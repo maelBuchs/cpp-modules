@@ -8,9 +8,9 @@ void Harl::warning(void) { std::cout << "Warning" << std::endl; }
 
 void Harl::error(void) { std::cout << "Error" << std::endl; }
 
-void Harl::complain(str level) {
+void Harl::complain(std::string level) {
 
-    str levels[4] = {"debug", "info", "warning", "error"};
+    std::string levels[4] = {"debug", "info", "warning", "error"};
     int i;
 
     for (i = 0; i < 4; i++) {
