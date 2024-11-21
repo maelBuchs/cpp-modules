@@ -19,8 +19,12 @@ class ScalarConverter {
     ScalarConverter &operator=(const ScalarConverter &other);
   public:
     static void convert(std::string input);
+    class InvalidInput : public std::exception {
+      public:
+        const char *what() const throw();
+    };
 };
 
-void autresFonctions();
+// void autresFonctions();
 
 #endif
