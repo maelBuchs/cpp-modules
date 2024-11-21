@@ -18,7 +18,8 @@ Fixed::Fixed(const int num) {
 
 Fixed &Fixed::operator=(Fixed const &f) {
     // std::cout << "Copy assignment operator called" << std::endl;
-    _value = f.getRawBits();
+    if (this != &f)
+        _value = f.getRawBits();
     return (*this);
 }
 
@@ -40,49 +41,49 @@ std::ostream &operator<<(std::ostream &o, Fixed const &f) {
     return o;
 }
 
-int Fixed::operator>(Fixed const &f2) {
+int Fixed::operator>(Fixed const &f2) const{
     if (this->toFloat() > f2.toFloat())
         return 1;
     return 0;
 }
 
-int Fixed::operator<(Fixed const &f2) {
+int Fixed::operator<(Fixed const &f2) const{
     if (this->toFloat() < f2.toFloat())
         return 1;
     return 0;
 }
 
-int Fixed::operator>=(Fixed const &f2) {
+int Fixed::operator>=(Fixed const &f2) const{
     if (this->toFloat() >= f2.toFloat())
         return 1;
     return 0;
 }
 
-int Fixed::operator<=(Fixed const &f2) {
+int Fixed::operator<=(Fixed const &f2) const{
     if (this->toFloat() <= f2.toFloat())
         return 1;
     return 0;
 }
 
-int Fixed::operator==(Fixed const &f2) {
+int Fixed::operator==(Fixed const &f2) const{
     if (this->toFloat() == f2.toFloat())
         return 1;
     return 0;
 }
 
-int Fixed::operator!=(Fixed const &f2) {
+int Fixed::operator!=(Fixed const &f2) const{
     if (this->toFloat() != f2.toFloat())
         return 1;
     return 0;
 }
 
-Fixed Fixed::operator+(Fixed const &f2) { return (Fixed(this->toFloat() + f2.toFloat())); }
+Fixed Fixed::operator+(Fixed const &f2) const{ return (Fixed(this->toFloat() + f2.toFloat())); }
 
-Fixed Fixed::operator-(Fixed const &f2) { return (Fixed(this->toFloat() - f2.toFloat())); }
+Fixed Fixed::operator-(Fixed const &f2) const{ return (Fixed(this->toFloat() - f2.toFloat())); }
 
-Fixed Fixed::operator*(Fixed const &f2) { return (Fixed(this->toFloat() * f2.toFloat())); }
+Fixed Fixed::operator*(Fixed const &f2) const{ return (Fixed(this->toFloat() * f2.toFloat())); }
 
-Fixed Fixed::operator/(Fixed const &f2) { return (Fixed(this->toFloat() / f2.toFloat())); }
+Fixed Fixed::operator/(Fixed const &f2) const{ return (Fixed(this->toFloat() / f2.toFloat())); }
 
 Fixed &Fixed::operator++() {
     ++_value;
@@ -111,7 +112,7 @@ Fixed Fixed::max(Fixed &f1, Fixed &f2) {
     return f2;
 }
 Fixed Fixed::max(Fixed const &f1, Fixed const &f2) {
-    if (f1.toFloat() > f2.toFloat())
+    if (f1 > f2)
         return f1;
     return f2;
 }
@@ -121,7 +122,7 @@ Fixed Fixed::min(Fixed &f1, Fixed &f2) {
     return f2;
 }
 Fixed Fixed::min(Fixed const &f1, Fixed const &f2) {
-    if (f1.toFloat() < f2.toFloat())
+    if (f1 < f2)
         return f1;
     return f2;
 }

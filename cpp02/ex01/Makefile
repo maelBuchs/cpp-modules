@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = Fixed
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98

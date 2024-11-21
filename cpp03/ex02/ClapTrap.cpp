@@ -1,5 +1,4 @@
 #include "ClapTrap.hpp"
-#include <iostream>
 
 void ClapTrap::attack(const std::string &target) {
     if (_energyPoint == 0 || _hitPoints == 0) {
@@ -55,20 +54,15 @@ ClapTrap::ClapTrap() {
 
 ClapTrap::ClapTrap(std::string name) {
     _name = name;
-    std::cout << "ClapTrap constructor" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoint,
-                   unsigned int attackDamage) {
-    _name = name;
-    _hitPoints = hitPoints;
-    _energyPoint = energyPoint;
-    _attackDamage = attackDamage;
+    _hitPoints = 10;
+    _energyPoint = 10;
+    _attackDamage = 0;
     std::cout << "ClapTrap constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &c) {
-    (*this) = c;
+    if (this != &c)
+        (*this) = c;
     std::cout << "ClapTrap copy constructor" << std::endl;
 }
 
