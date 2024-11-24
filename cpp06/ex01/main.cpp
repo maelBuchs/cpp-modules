@@ -8,6 +8,9 @@ int main(){
   data->name = "Bill";
   uintptr_t serialized = Serializer::serialize(data);
   Data* deserialized = Serializer::deserialize(serialized);
+
+  std::cout << serialized << " <---> " << deserialized << " = " << data << std::endl;
+
   std::cout << data->age << " = " << deserialized->age << std::endl;
   std::cout << data->name << " = " << deserialized->name << std::endl;
   std::cout << data->lastName << " = " << deserialized->lastName << std::endl;
