@@ -17,7 +17,7 @@ public:
   Span(int max);
   ~Span();
   void addNumber(int num);
-  void addSpan(int num);
+  void addMultiple(int num);
   friend std::ostream &operator<<(std::ostream &os, const Span &span);
 
 private:
