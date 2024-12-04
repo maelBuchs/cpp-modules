@@ -1,7 +1,8 @@
 #pragma once
 
 #include <exception>
-#include <ostream>
+#include <iostream>
+#include <iterator>
 #include <vector>
 
 class Span {
@@ -17,8 +18,14 @@ public:
   Span(int max);
   ~Span();
   void addNumber(int num);
-  void addMultiple(int num);
+  template <typename Iterator> void addMultiple(Iterator begin, Iterator end) {
+      if ((int)_vec.size() + std::distance(begin, end) >= _max )
+        throw FullContainerException();
+          _vec.insert(_vec.end(), begin, end);
+  };
   friend std::ostream &operator<<(std::ostream &os, const Span &span);
+  int shortestSpan(void);
+  int longestSpan(void);
 
 private:
   int _max;
