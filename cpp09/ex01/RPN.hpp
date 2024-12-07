@@ -8,8 +8,20 @@
 class RPN
 {
     public:
+        static int compute(std::string input);
+    class DividedByZero : public std::exception {
+      public:
+        const char *what() const throw();
+    };
+    class MissingNumber : public std::exception {
+      public:
+        const char *what() const throw();
+    };
+    class InvalidInput : public std::exception {
+      public:
+        const char *what() const throw();
+    };
+    private:
         RPN();
         ~RPN();
-        static int compute(std::string input);
-    private:
 };  
