@@ -4,16 +4,16 @@
 
 int main(void) {
 
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+  const Animal *i = new Cat();
+  const Animal *j = new Dog();
 
-	i->makeSound(); // will output the cat sound!
-	j->makeSound();
-	delete i;
-	delete j;
+  i->makeSound();
+  j->makeSound();
+  delete i;
+  delete j;
 
-	const WrongAnimal* k = new WrongCat();
-	k->makeSound();
-	delete k;
-	return 0;
+  const WrongAnimal *k = new WrongCat();
+  k->makeSound();
+  delete k;
+  return 0;
 }
