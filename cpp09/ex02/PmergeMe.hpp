@@ -6,6 +6,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+typedef std::pair<int, int> intPair;
+typedef std::vector<intPair> pairVec;
+
+
 class PmergeMe {
   public:
     PmergeMe(char **input);
@@ -22,6 +27,7 @@ class PmergeMe {
 
   private:
     void parseInput(char **input);
+    std::vector<int> vectorFordJhonson(std::vector<int> list, int depth);
 
     std::deque<int>  _dequeData;
     std::vector<int> _vectorData;
