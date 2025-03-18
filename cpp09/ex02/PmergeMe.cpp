@@ -13,7 +13,7 @@ static int stringToInt(std::string str) {
     unsigned long long i = 0;
 
     while (str[i] != '\0') {
-        if (str[i] < '0' || str[i] > '9') // Vérification si c'est un chiffre
+        if (str[i] < '0' || str[i] > '9')
             throw PmergeMe::InvalidInput();
         result = result * 10 + (str[i] - '0');
         i++;
@@ -46,10 +46,7 @@ std::ostream &operator<<(std::ostream &os, const PmergeMe &pm) {
 
 const char *PmergeMe::InvalidInput::what() const throw() { return "Error: Invalid input !"; }
 
-PmergeMe::PmergeMe(char **input) {
-    parseInput(input);
-    // throw InvalidInput();
-}
+PmergeMe::PmergeMe(char **input) { parseInput(input); }
 
 static bool isNumber(const std::string &str) {
     for (size_t i = 0; i < str.size(); i++) {
@@ -74,82 +71,34 @@ void PmergeMe::parseInput(char **input) {
 
 PmergeMe::~PmergeMe() {}
 
-//create a function to print an int vector
-void printVector(std::vector<int> vec)
-{
-	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
+static double currentUsTime() {
+    clock_t start_vector = clock();
+    return (double)start_vector / CLOCKS_PER_SEC;
 }
 
+void PmergeMe::processData() {
 
-void PmergeMe::processData() { vectorFordJhonson(_vectorData, 0); }
+    std::cout << "Vector Before :" << std::endl;
+    double start = currentUsTime();
+    printContainer(_vectorData);
+    _vectorData = fordJhonson(_vectorData, 0);
+    double end = currentUsTime();
+    std::cout << "Vector After :" << std::endl;
+    printContainer(_vectorData);
+    double vectorTime = end - start;
 
-std::vector<int> PmergeMe::vectorFordJhonson(std::vector<int> list, int depth)
-{
-	std::cout << "new recursion " << depth << std::endl;
-	int last = -1;
-	if(list.size() <= 1)
-		return list;
+    std::cout << "Deque Before :" << std::endl;
+    start = currentUsTime();
+    printContainer(_dequeData);
+    _dequeData = fordJhonson(_dequeData, 0);
+    end = currentUsTime();
+    std::cout << "Deque After :" << std::endl;
+    printContainer(_dequeData);
+    std::cout << "\n\nVector Time: " << vectorTime << "ms" << std::endl;
+    std::cout << "std::vector time to process " << _vectorData.size()
+              << " elements : " << (vectorTime) * 1000000 << " us" << std::endl;
+    std::cout << "std::deque time to process " << _dequeData.size()
+              << " elements : " << (end - start) * 1000000 << " us" << std::endl;
 
-	pairVec pairs;
-	for(unsigned long i = 0; i < list.size() - 1; i+=2)
-	{
-		if (i+1 < list.size())
-			pairs.push_back(std::pair<int,int>(std::max(list[i], list[i+1]), std::min(list[i], list[i+1])));
-		else
-			last = list[i];
-	}
-
-	std::vector<int> maxList, minList;
-
-	for(pairVec::iterator it = pairs.begin(); it != pairs.end(); it++)
-	{
-		maxList.push_back(it->first);
-		if(it->second)
-			minList.push_back(it->second);
-	}
-	if(last != -1)
-		maxList.push_back(last);
-
-	
-	std::cout << "MAxlist " << depth << std::endl;
-	printVector(maxList);
-	std::cout << "Minlist " << depth << std::endl;
-	printVector(minList);
-
-	std::vector<int> sortedMax = vectorFordJhonson(maxList, depth + 1);
-	std::cout << "sortedMAxlist " << depth << std::endl;
-
-	printVector(sortedMax);
-	return sortedMax;
+    _dequeData = fordJhonson(_dequeData, 0);
 }
-
-/*
-
-function ford_johnson_sort(list):
-    if taille(list) <= 1:
-        return list
-
-    # 1. Former des paires
-    pairs = []
-    for i de 0 à taille(list) - 1 par 2:
-        if i + 1 < taille(list):
-            pairs.append(trier([list[i], list[i+1]]))  # Trier chaque paire
-        else:
-            pairs.append([list[i]])  # Élément seul s'il y a un nombre impair d'éléments
-
-    # 2. Séparer les petits et les grands
-    petits = [pair[0] for pair in pairs]
-    grands = [pair[1] for pair in pairs si taille(pair) == 2]
-
-    # 3. Trier récursivement les grands
-    grands_tries = ford_johnson_sort(grands)
-
-    # 4. Insérer les petits dans les grands triés
-    liste_finale = insérer_ordre(petits, grands_tries)
-
-    return liste_finale
-        */
